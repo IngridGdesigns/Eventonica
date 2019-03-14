@@ -1,0 +1,61 @@
+h2 {
+    color: rgb(7, 162, 214);
+    background-color: rgb(66, 62, 62);
+    font-size: 45px;
+   
+}
+
+p {
+    color: rgb(97, 4, 61);
+    background-color: #e2eafa;
+}
+
+/*
+https://codeburst.io/4-four-ways-to-style-react-components-ac6f323da822
+*/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .location {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: rgb(61, 167, 51);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  /* .buttonDelete {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: rgb(112, 10, 52);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  } */
+  
+  .card button:hover {
+    opacity: 0.8;
+    background-color: rgb(112, 10, 52);
+  }
+
+  #hover:hover {
+    opacity: 0.6;
+    color: rgb(112, 10, 52);
+  }
