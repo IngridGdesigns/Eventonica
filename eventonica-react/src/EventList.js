@@ -99,7 +99,7 @@ addEvent = () => {
 //Where file will render once it loads
 //https://reactjsexample.com/card-grid-with-react-js/
     render(){
-        const { events } = this.props
+       // const { events } = this.props
 
         const buttonStyle = {
             color: 'whitesmoke',
@@ -146,7 +146,7 @@ addEvent = () => {
                 <div className='card' key={event.id}>
                 
                 <h2>{event.name}</h2>
-                <img src= {'https://placebear.com/200/200'} alt="placeholder image"></img>
+                <img src= {'https://placebear.com/200/200'} alt="placeholder "></img>
             
                 <p>{event.description}</p>  
                 <p className="location">Location: {event.location}</p> 

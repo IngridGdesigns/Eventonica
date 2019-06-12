@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import EventList from './EventList'
 import Header from './Header'
-import Test from './test'
+//import Test from './test'
 
 
 
