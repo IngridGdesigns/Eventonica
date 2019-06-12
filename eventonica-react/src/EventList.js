@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import "./BayEvents.css"
 
 
-
-
 class EventList extends Component {
     constructor(props) {
         super(props)
@@ -16,13 +14,9 @@ class EventList extends Component {
             location: " ",
             description: " ",
 
-            isloading:false,
-
-           
+            isloading:false, 
         }
 
-    //    this.handleUpdate = this.addEvent.bind(this);
-        // this.deleteHandler = this.deleteHandler.bind(this)
         this.editHandler = this.editHandler.bind(this)
         this.addEvent = this.addEvent.bind(this)
         this.addHandler = this.addHandler.bind(this)
@@ -38,10 +32,8 @@ class EventList extends Component {
         .then(events => this.setState({events, loading: false}, () => console.log('is it working?', 
         events)
         )
-    )
-
+        )
     }
-
 
     addHandler = (e) => {
         this.setState({ events: [...e.target.value, ]})
@@ -62,7 +54,6 @@ addEvent = () => {
     .then(res => res.json())
     .then(newEvent => this.setState({ events: [...this.state.events, newEvent]}))
 }
-
 
     //PUT -  editing an event
     editHandler(e) {
@@ -96,20 +87,14 @@ addEvent = () => {
             let newState = this.state.events.filter(event =>{
                 //console.log(event, removeEvent, event.id === removeEvent, typeof event.id)
                 return event.id !== removeEvent
-              }) 
+                }) 
             //console.log(newState, removeEvent)
             this.setState ({events: newState})
             
-           // console.log(this.state); 
+            // console.log(this.state); 
         })    
     }
  
-
-
-
-
-   
-
    
 //Where file will render once it loads
 //https://reactjsexample.com/card-grid-with-react-js/
@@ -123,26 +108,7 @@ addEvent = () => {
 
     return(
     <div>
-        <section className="card">
-        {this.state.events.map((event) => {
-            return (
-                <div key={event.id}>
-                
-                <h2>{event.name}</h2>
-                <img src= {'https://placebear.com/200/200'} alt="placeholder image"></img>
-            
-                <p>{event.description}</p>  
-                <p className="location">Location: {event.location}</p> 
-                <button onClick = {this.editHandler}>Edit me!</button>
-                <button value={event.id} id="hover" style={buttonStyle} onClick={this.deleteEvent}>Remove me!</button>
-                <br/>
-                <hr/>
-                </div>
-                    )
-                })}
-        
-        </section>
-        <form> 
+         <form> 
             <br/>
             Event: 
             <input 
@@ -169,42 +135,38 @@ addEvent = () => {
             />
         </form>
             <button onClick = {this.addEvent} id="add">Add me!</button>
-            <button onClick = {this.editHandler} id="edit">Edit me!</button>
-            <button onClick = {this.deleteHandler} id="delete">Remove me!</button>
-             <form > 
+           
+             
+             {/* <form >   for editing form that i want to have it pop up */}
             <br/>
-            Event: 
-            <input onChange={this.addHandler}
-                type="text"
-                name ="event"
-                value={this.state.name}
+        <div className='container-fluid'>
+        {this.state.events.map((event) => {
+            return (
+                <div className='row col-md-4'>
+                <div className='card' key={event.id}>
                 
-                />
+                <h2>{event.name}</h2>
+                <img src= {'https://placebear.com/200/200'} alt="placeholder image"></img>
             
-            Description: 
-                <input onChange={this.addHandler}
-                type="text"
-                name ="description"
-                value={this.state.description}
-               
-            />
-
-            Location: 
-            <input onChange={this.addHandler}
-                type="text" 
-                name="location"
-                value={this.state.location}
+                <p>{event.description}</p>  
+                <p className="location">Location: {event.location}</p> 
+                <button onClick = {this.editHandler}>Edit me!</button>
+                <button value={event.id} id="hover" style={buttonStyle} onClick={this.deleteEvent}>Remove me!</button>
+                <br/>
+                <hr/>
                 
-            />
-
-            <button onClick = {this.addEvent} id="add">Add new Event!</button>
-          
-        </form>
+                </div>
+            </div>
+        
+           
+                    )
+                })}
+        </div>
+       
       </div>
     );
-    }
+}
 
-    // render(){
     
     //     if(this.state.editing){
     //         return this.renderForm()

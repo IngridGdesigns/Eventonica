@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EventList from './EventList'
 import Header from './Header'
+import Test from './test'
 
 
 
@@ -14,7 +15,10 @@ class App extends Component {
     return (
       <div className="App">
       <Header />
+      <section>
       <EventList  />
+      {/* <Test /> */}
+      </section>
       </div>
     );
   }
